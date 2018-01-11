@@ -64,7 +64,7 @@ When flex items are too big to fit inside their container, those items are instr
 
 According to the [current flexbox specification](http://www.w3.org/TR/css-flexbox/#flex-common):
 
-> By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the min-width or min-height property.
+> By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the `min-width` or `min-height` property.
 
 #### Workaround
 
@@ -98,7 +98,7 @@ When using `align-items: center` on a flex container in the column direction, th
 
 #### Workaround
 
-Most of the time, this can be fixed by simply setting `max-width: 100%` on the flex item. If the flex item has a padding or border set, you'll also need to make sure to use `box-sizing: border-box` to account for that space. If the flex item has a margin, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
+Most of the time, this can be fixed by simply setting `max-width: 100%` on the flex item. If the flex item has a `padding` or `border` set, you'll also need to make sure to use `box-sizing: border-box` to account for that space. If the flex item has a `margin`, using `box-sizing` alone will not work, so you may need to use a container element with padding instead.
 
 
 <!-- To preserve old links -->
@@ -196,7 +196,7 @@ The [March 2014 spec](http://www.w3.org/TR/2014/WD-css-flexbox-1-20140325/#min-s
 
 > On a flex item whose overflow is not visible, this [auto] keyword specifies as the minimum size the smaller of: (a) the min-content size, or (b) the computed width/height, if that value is definite.
 
-Demo [5.1.a](https://codepen.io/philipwalton/pen/LEbQON) contains an image whose height is 200 pixels and whose width is 500 pixels. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's min-content size should be based the image's actual height or scaled height.
+Demo [5.1.a](https://codepen.io/philipwalton/pen/LEbQON) contains an image whose height is 200 pixels and whose width is 500 pixels. Its container, however, is only 300 pixels wide, so after the image is scaled to fit into that space, its computed height should only be 120 pixels. The text quoted above does not make it clear as to whether the flex item's `min-content` size should be based the image's actual height or scaled height.
 
 The [most recent spec](http://dev.w3.org/csswg/css-flexbox/#min-size-auto) has resolved this ambiguity in favor of using sizes that will preserve an element's intrinsic aspect ratio.
 
@@ -482,7 +482,7 @@ Inline elements, including `::before` and `::after` pseudo-elements, are not tre
 
 #### Workaround
 
-This issue can be avoided by adding a non-inline display value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](https://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
+This issue can be avoided by adding a non-inline `display` value to the items, e.g. `block`, `inline-block`, `flex`, etc. Demo [12.1.b](https://codepen.io/philipwalton/pen/NqLoNp) shows an example of this working in IE 10-11.
 
 
 <!-- To preserve old links -->
@@ -619,7 +619,7 @@ In some browsers, CSS animations involving the `flex-basis` property are ignored
 
 #### Workaround
 
-Since the `flex-basis` property is effectively just a substitute for the container's size property along the main axis (`width` for rows and `height` for columns), you can achieve the affect of animating `flex-basis` by using a `flex-basis` value of `auto` and instead animating either the `width` or `height` instead. Demo [16.1.b](https://codepen.io/philipwalton/pen/MORPjP) shows how you can achieve the same affect from demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) by animating `width` instead of `flex-basis`.
+Since the `flex-basis` property is effectively just a substitute for the container's size property along the main axis (`width` for rows and `height` for columns), you can achieve the effect of animating `flex-basis` by using a `flex-basis` value of `auto` and instead animating either the `width` or `height` instead. Demo [16.1.b](https://codepen.io/philipwalton/pen/MORPjP) shows how you can achieve the same effect from demo [16.1.a](https://codepen.io/philipwalton/pen/yPrRax) by animating `width` instead of `flex-basis`.
 
 
 ### Flexbug #17
